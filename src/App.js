@@ -1,6 +1,6 @@
 import { HashRouter as Router } from "react-router-dom";
 import { Fragment } from "react";
-import { Header, MainSwitch } from "components";
+import { Header, MainSwitch, Spinner, TaskInformation } from "components";
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
       <Fragment>
         <MainSwitch />
       </Fragment>
+      <Spinner />
+      <TaskInformation />
     </Router>
   );
 }
