@@ -7,7 +7,7 @@ import styles from "./rootSection.module.scss";
 
 const RootSection = () => {
   const login = useSelector((store) => store.login);
-  const cookie = useSelector((store) => store.cookie[0].isCookie);
+  const cookie = useSelector((store) => store.cookie);
 
   const dispatch = useDispatch();
 
@@ -15,7 +15,8 @@ const RootSection = () => {
     dispatch(cookeieCheck());
   }, []);
 
-  const changeViev = !login.length && !cookie ? <LoginPage /> : <WallPage />;
+  const changeViev =
+    !login.length && !cookie.length ? <LoginPage /> : <WallPage />;
   return <div className={styles.wrapper}>{changeViev}</div>;
 };
 

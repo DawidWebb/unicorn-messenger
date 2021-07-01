@@ -10,16 +10,6 @@ export const LOG_OUT = "LOG_OUT";
 
 export const addLogin = (dataObj) => async (dispatch) => {
   dispatch(addSpinner());
-  // const orderRes = await fetch(baseURL, data, {
-  //   method: "POST",
-  //   headers: {
-  //     accept: "application/json",
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(data),
-  // });
-  // const status = orderRes.status;
-  // const content = await orderRes.json();
 
   const { data, status } = await request.post("/users", dataObj);
   if (status === 200) {
@@ -27,7 +17,7 @@ export const addLogin = (dataObj) => async (dispatch) => {
       type: LOG_IN,
       payload: data.user.login,
     });
-    dispatch(cookieSet());
+    dispatch(cookieSet(data.user.login));
     dispatch(removeSpinner());
   } else if (status === 404) {
     dispatch(removeSpinner());

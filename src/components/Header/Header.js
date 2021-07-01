@@ -6,7 +6,7 @@ import styles from "./header.module.scss";
 
 const Header = () => {
   const login = useSelector((store) => store.login);
-  const cookie = useSelector((store) => store.cookie[0].isCookie);
+  const cookie = useSelector((store) => store.cookie);
 
   const dispatch = useDispatch();
   const handleLogOut = () => {
@@ -14,14 +14,14 @@ const Header = () => {
     dispatch(cookieDel());
   };
   const logoViev =
-    !login.length && !cookie ? (
+    !login.length && !cookie.length ? (
       <img src="images/unicorn-sleep_640.png" alt="unicorn-sleep" />
     ) : (
       <img src="images/unicorn-stand_640.png" alt="unicorn-stand" />
     );
 
   const buttonLogOutViev =
-    !login.length && !cookie ? (
+    !login.length && !cookie.length ? (
       ""
     ) : (
       <Button type="button" name="wyloguj mnie" onClick={handleLogOut} />
