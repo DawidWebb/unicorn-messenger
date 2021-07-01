@@ -1,11 +1,11 @@
 import { Route, Switch, Redirect } from "react-router-dom";
-import { WelcomePage } from "pages";
+import { RootSection } from "pages";
 
 const MainSwitch = () => {
   return (
     <>
       <Switch>
-        <Route exact path="/" render={() => <WelcomePage />} />
+        <Route exact path="/" render={() => <RootSection />} />
         <Redirect to="/" />
       </Switch>
     </>
