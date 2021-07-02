@@ -1,1 +1,5 @@
-@import "../../Styles/common.scss"
+@import "../../Styles/common.scss";
+
+button {
+    @include button;
+}

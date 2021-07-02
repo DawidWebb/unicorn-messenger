@@ -1,8 +1,12 @@
 @import "../../Styles/common.scss";
 
 .wrapper {
-    width: 90%;
-    margin: 10px auto;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    background-color: $color-four;
+    z-index: 10;
 
     .inside {
         width: 90%;
@@ -22,10 +26,43 @@
             img {
                 width: 50%;
                 height: 150px;
+            }
+        }
+
+        .appName {
+            margin: 10px auto;
+            font-weight: 700;
+            color: $color-one;
+        }
+
+        .buttons {
+            margin-bottom: 10px;
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .inside {
+            flex-direction: row;
+            justify-content: space-around;
+
+            .logo {
+                width: 50%;
+                margin: 10px auto;
+            }
+        }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        .inside {
+
+            .logo {
+                width: 30%;
 
             }
+        }
 
-
+        .appName {
+            font-size: $l-fs;
         }
     }
 }

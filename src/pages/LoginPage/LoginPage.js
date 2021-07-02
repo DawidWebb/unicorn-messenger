@@ -45,7 +45,9 @@ const LoginPage = () => {
             placeholder="wpisz swoje hasło"
             onChange={handleSetPassword}
           />
-          <Button type="submit" name="zaloguj mnie" />
+          <div>
+            <Button type="submit" name="zaloguj mnie" />
+          </div>
         </form>
       </div>
     </div>

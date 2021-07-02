@@ -1,1 +1,52 @@
-@import "../../Styles/common.scss"
+@import "../../Styles/common.scss";
+
+.wrapper {
+    @include wrapper;
+    margin-top: 40px;
+
+    .inside {
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            input {
+                @include inputViev;
+                margin: 20px auto;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+
+            }
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .inside {
+            form {
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                div {
+                    width: 50%
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        .inside {
+            form {
+
+                div {
+                    width: 90%
+                }
+
+            }
+        }
+    }
+}
