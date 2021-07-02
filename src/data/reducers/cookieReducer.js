@@ -3,8 +3,7 @@ import { COOKIE_SET, COOKIE_DELETE } from "../actions";
 export const cookieReducer = (state = [], action) => {
   switch (action.type) {
     case COOKIE_SET:
-      console.log(action.payload);
-      return (state = [action.payload]);
+      return (state = action.payload);
     case COOKIE_DELETE:
       return (state = []);
     default:

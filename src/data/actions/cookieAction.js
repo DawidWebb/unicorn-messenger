@@ -5,7 +5,6 @@ export const COOKIE_DELETE = "COOKIE_DELETE";
 export const cookeieCheck = () => (dispatch) => {
   const cookie = checkCookie();
   if (cookie) {
-    console.log("check", cookie);
     dispatch({
       type: COOKIE_SET,
       payload: cookie,
