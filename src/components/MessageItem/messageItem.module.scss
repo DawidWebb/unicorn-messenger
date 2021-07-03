@@ -1,0 +1,89 @@
+@import "../../Styles/common.scss";
+
+
+.owner {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px auto;
+
+    .inside {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: auto;
+        padding: 5px;
+        background-color: $color-two;
+        border: 2px solid $color-five;
+        border-radius: $radius;
+
+        div:nth-child(1) {
+            font-weight: 700;
+            color: $text-first-color;
+            border-bottom: 1px solid $text-first-color;
+        }
+
+        p {
+            word-wrap: break-word;
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .inside {
+            width: 350px;
+        }
+
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        width: 80%;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, x-large)) {
+        width: 60%;
+
+        .inside {
+            width: 400px;
+        }
+    }
+}
+
+.friend {
+    .inside {
+        width: 200px;
+        height: auto;
+        padding: 5px;
+        background-color: $color-five;
+        border: 2px solid $color-two;
+        border-radius: $radius;
+
+        div:nth-child(1) {
+            font-weight: 700;
+            color: $color-one;
+            border-bottom: 1px solid $color-one;
+        }
+
+        p {
+            word-wrap: break-word;
+        }
+    }
+
+
+    @media screen and (orientation: landscape) {
+        .inside {
+            width: 350px;
+        }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        width: 80%;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, x-large)) {
+        width: 60%;
+
+        .inside {
+            width: 400px;
+        }
+    }
+}

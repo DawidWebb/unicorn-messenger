@@ -1,0 +1,67 @@
+@import "../../Styles/common.scss";
+
+.wrapper {
+    @include wrapper;
+    margin-bottom: 40px;
+    border: 1px solid transparent;
+
+    .inside {
+        .messages {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .formMessage {
+            display: flex;
+            justify-content: flex-end;
+            margin: 40px;
+
+
+            form {
+                textarea {
+                    width: 200px;
+                    height: 80px;
+                    color: black;
+                    background-color: $color-three;
+                    border: 2px solid $color-one;
+                    border-radius: $radius;
+                    padding: 5px;
+                }
+            }
+
+
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        .inside {
+            .formMessage {
+
+                form {
+                    textarea {
+                        width: 300px;
+                        height: 60px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, medium)) {
+        .inside {
+            .formMessage {
+                bottom: -180px;
+
+                form {
+                    textarea {
+
+                        height: 100px;
+
+                    }
+                }
+            }
+        }
+    }
+}
