@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage, getMessages } from "../../data/actions";
-import { Button, IconsBox, MessageItem } from "components";
+import { Balloons, Button, IconsBox, MessageItem } from "components";
 
 import styles from "./wallPage.module.scss";
 
@@ -43,11 +43,20 @@ const WallPage = () => {
 
     setMessage("");
   };
+
+  // const handleAddFile = (e) => {
+  //   const picture = e.target.files[0];
+  //   console.log(picture);
+  // };
+  // const handleUploadFile = () => {};
   return (
     <div className={styles.wrapper}>
       <div className={styles.inside}>
         <div className={styles.messages}>{vievMessages}</div>
         <div className={styles.formMessage}>
+          <div className={styles.balloons}>
+            <Balloons />
+          </div>
           <form onSubmit={handleOnSubmitMessage}>
             <textarea
               placeholder="Napisz coś..."
@@ -77,19 +86,23 @@ const WallPage = () => {
               <Button name="wyślij" type="submit" />
             </div>
           </form>
-        </div>
-        <div
-          className={styles.iconsBox}
-          style={{
-            display: `${!openBox ? "none" : "flex"}`,
-          }}
-        >
-          <IconsBox
-            setSelectedIcon={setSelectedIcon}
-            setOpenBox={setOpenBox}
-            message={message}
-            setMessage={setMessage}
-          />
+          {/* <form>
+            <input type="file" onChange={handleAddFile} />
+            <Button name="wyslij zdjęcie" onClick={handleUploadFile} />
+          </form> */}
+          <div
+            className={styles.iconsBox}
+            style={{
+              display: `${!openBox ? "none" : "flex"}`,
+            }}
+          >
+            <IconsBox
+              setSelectedIcon={setSelectedIcon}
+              setOpenBox={setOpenBox}
+              message={message}
+              setMessage={setMessage}
+            />
+          </div>
         </div>
       </div>
     </div>

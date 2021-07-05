@@ -15,6 +15,7 @@
         .formMessage {
             display: flex;
             justify-content: flex-end;
+            flex-wrap: wrap;
             margin: 20px;
 
 
@@ -38,19 +39,33 @@
                     }
                 }
             }
+
+            .iconsBox {
+                flex-basis: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80%;
+                height: 110px;
+                margin: 0 auto;
+                background-color: $color-four;
+                border: 2px solid $color-six;
+                border-radius: $radius;
+            }
+
+            .balloons {
+                position: fixed;
+                width: 100%;
+                top: 70%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                flex-basis: 100%;
+                z-index: -1;
+
+
+            }
         }
 
-        .iconsBox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            height: 110px;
-            margin: 0 auto;
-            background-color: $color-four;
-            border: 2px solid $color-six;
-            border-radius: $radius;
-        }
     }
 
     @media screen and (orientation: landscape) {

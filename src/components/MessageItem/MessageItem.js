@@ -7,7 +7,7 @@ const MessageItem = ({ name, message }) => {
     name === cookie ? (
       <div className={styles.owner}>
         <div className={styles.inside}>
-          <div>{name}</div>
+          <div>Ty</div>
           <p>{message}</p>
         </div>
       </div>
