@@ -1,0 +1,21 @@
+@import "../../Styles/common.scss";
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+
+
+    div {
+        width: 10%;
+        height: 20px;
+        margin: 5px;
+        padding: 5px;
+        background-color: transparent;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+}

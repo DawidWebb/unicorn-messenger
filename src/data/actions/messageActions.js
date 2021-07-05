@@ -34,7 +34,6 @@ export const addMessage = (dataObj) => async (dispatch) => {
 export const clearBase = () => async (dispatch) => {
   const { data, status } = await request.get("/messages");
   if (status === 200) {
-    console.log(data);
     data.forEach((item) => request.delete(`/messages/${item._id}`));
   }
 };

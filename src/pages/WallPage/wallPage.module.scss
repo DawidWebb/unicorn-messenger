@@ -15,7 +15,7 @@
         .formMessage {
             display: flex;
             justify-content: flex-end;
-            margin: 40px;
+            margin: 20px;
 
 
             form {
@@ -28,9 +28,28 @@
                     border-radius: $radius;
                     padding: 5px;
                 }
+
+                .buttons {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .icons {
+                        cursor: pointer;
+                    }
+                }
             }
+        }
 
-
+        .iconsBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 100px;
+            margin: 0 auto;
+            background-color: $color-four;
+            border: 2px solid $color-six;
+            border-radius: $radius;
         }
     }
 
@@ -47,6 +66,7 @@
                 }
             }
         }
+
     }
 
     @media screen and (min-width: map-get($breakpoints, medium)) {
@@ -61,6 +81,10 @@
 
                     }
                 }
+            }
+
+            .iconsBox {
+                width: 30%;
             }
         }
     }

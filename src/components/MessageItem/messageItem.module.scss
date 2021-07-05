@@ -49,6 +49,11 @@
 }
 
 .friend {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px auto;
+
     .inside {
         width: 200px;
         height: auto;
