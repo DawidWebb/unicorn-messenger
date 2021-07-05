@@ -1,12 +1,13 @@
 @import "../../Styles/common.scss";
 
 .wrapper {
-    position: sticky;
+    position: absolute;
     top: 0;
     width: 100%;
     margin: 0 auto;
     background-color: $color-four;
     z-index: 10;
+    transition: 0.5s;
 
     .inside {
         width: 90%;

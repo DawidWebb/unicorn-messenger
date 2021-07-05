@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addLogout, cookieDel, clearBase } from "../../data/actions";
 import { Button } from "components";
@@ -14,6 +15,23 @@ const Header = () => {
     dispatch(cookieDel());
     dispatch(clearBase());
   };
+
+  const [windowScroll, setWindowScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 70) {
+        setWindowScroll(true);
+      } else {
+        setWindowScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setWindowScroll]);
+
   const logoViev =
     !login.length && !cookie.length ? (
       <img src="images/unicorn-sleep_640.png" alt="unicorn-sleep" />
@@ -34,7 +52,12 @@ const Header = () => {
     <p>Hej {cookie}...</p>
   );
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{
+        top: `${windowScroll ? "-200px" : "0px"}`,
+      }}
+    >
       <div className={styles.inside}>
         <div className={styles.logo}>{logoViev}</div>
         <div className={styles.appName}>{nameViev}</div>
